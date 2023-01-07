@@ -3,26 +3,36 @@ html
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous")
-
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       .container-fluid
         a.navbar-brand(href='/') Navbar
-        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-          span.navbar-toggler-icon
-    .navbar.navbar-default.navbar-fixed-top
-      .container
-        .navbar-header
-          a.navbar-brand(href='/') Loc8r
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-        #navbar-main.navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li
-              a(href='/about/') About
+        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation")
+         span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbars
+          ul.navbar-nav.mr-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(href='/about/') About
+            li.nav-item
+              a.nav-link(href="#") Link
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
+              ul.dropdown-menu(aria-labelledby="navbarDropdown")
+                li
+                  a.dropdown-item(href="#") Action
+                li
+                  a.dropdown-item(href="#") Another action
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href="#") Something else here 
+            li.nav-item
+              a.nav-link.disabled(href="#" tabindex="-1" aria-disabled="true") Disabled
+           form.d-flex
+            input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
+            button.btn.btn-outline-success(type="submit") Search
+
+    script(src="/javascripts/bootstrap.bundle.min.js")
     .container                   
       block content
