@@ -1,39 +1,45 @@
 doctype html
-html
+html.h-100
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-  body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      .container-fluid
-        a.navbar-brand(href='/') Navbar
-        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation")
-         span.navbar-toggler-icon
-        .collapse.navbar-collapse#navbars
-          ul.navbar-nav.mr-auto.mb-2.mb-lg-0
-            li.nav-item
-              a.nav-link.active(href='/about/') About
-            li.nav-item
-              a.nav-link(href="#") Link
-            li.nav-item.dropdown
-              a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
-              ul.dropdown-menu(aria-labelledby="navbarDropdown")
-                li
-                  a.dropdown-item(href="#") Action
-                li
-                  a.dropdown-item(href="#") Another action
-                li
-                  hr.dropdown-divider
-                li
-                  a.dropdown-item(href="#") Something else here 
-            li.nav-item
-              a.nav-link.disabled(href="#" tabindex="-1" aria-disabled="true") Disabled
-           form.d-flex
-            input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
-            button.btn.btn-outline-success(type="submit") Search
+  body.d-flex.flex-column.h-100
+    header   
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        .container-fluid
+          a.navbar-brand(href='/') Navbar
+          button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation")
+           span.navbar-toggler-icon
+          .collapse.navbar-collapse#navbars
+            ul.navbar-nav.mr-auto.mb-2.mb-lg-0
+              li.nav-item
+                a.nav-link.active(href='/about/') About
+              li.nav-item
+                a.nav-link(href="#") Link
+              li.nav-item.dropdown
+                a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
+                ul.dropdown-menu(aria-labelledby="navbarDropdown")
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    hr.dropdown-divider
+                  li
+                    a.dropdown-item(href="#") Something else here 
+              li.nav-item
+                a.nav-link.disabled(href="#" tabindex="-1" aria-disabled="true") Disabled
+            form.d-flex
+              input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
+              button.btn.btn-outline-success(type="submit") Search
 
 
     script(src="/javascripts/bootstrap.bundle.min.js")
-    .container                   
-      block content
+    main.flex-shrink-0
+      .container                   
+        block content
+
+    footer.footer.mt-auto.py-3.bg-dark
+      .container
+        span.text-muted Автор Я!
